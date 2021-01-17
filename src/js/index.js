@@ -250,8 +250,7 @@ class App extends React.Component {
 
   updateState() {
     this.state.ContractInstance.minimumBet((err, result) => {
-      if (err) throw new Error(err);
-      if (result) {
+      if (result != null) {
         this.setState({
           minimumBet: parseFloat(web3.fromWei(result, "ether"))
         });
@@ -259,8 +258,7 @@ class App extends React.Component {
     });
 
     this.state.ContractInstance.totalBet((err, result) => {
-      if (err) throw new Error(err);
-      if (result) {
+      if (result != null) {
         this.setState({
           totalBet: parseFloat(web3.fromWei(result, "ether"))
         });
@@ -268,8 +266,7 @@ class App extends React.Component {
     });
 
     this.state.ContractInstance.numberOfBets((err, result) => {
-      if (err) throw new Error(err);
-      if (result) {
+      if (result != null) {
         this.setState({
           numberOfBets: parseFloat(web3.fromWei(result, "ether"))
         });
@@ -277,8 +274,7 @@ class App extends React.Component {
     });
 
     this.state.ContractInstance.maxAmountOfBets((err, result) => {
-      if (err) throw new Error(err);
-      if (result) {
+      if (result != null) {
         this.setState({
           maxAmountOfBets: parseFloat(web3.fromWei(result, "ether"))
         });
